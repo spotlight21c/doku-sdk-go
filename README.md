@@ -7,7 +7,7 @@ unofficial doku payment solution(disbursement, repayment using VA direct) sdk by
 ## Disbursement
 
 ```golang
-dokuDisbursement "github.com/spotlight21c/doku-sdk-go/disbursement"
+import dokuDisbursement "github.com/spotlight21c/doku-sdk-go/disbursement"
 
 isProduction := false
 
@@ -58,4 +58,14 @@ if inquiryResponse, err := dokuClient.Inquiry("REQUEST_ID1", amount, dokuAccount
 		fmt.Println(remitResponse.Remit.TransactionId)
 	}
 }
+```
+
+## Repayment
+
+```golang
+dokuRepayment "github.com/spotlight21c/doku-sdk-go/repayment"
+
+isProduction := false
+
+dokuClient := dokuRepayment.New("DOKU_MALLID", "DOKU_SHARED_KEY", isDokuProduction)
 ```

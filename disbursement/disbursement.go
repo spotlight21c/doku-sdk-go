@@ -8,7 +8,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	"github.com/spotlight21c/doku-sdk-go/encrypt"
+	"github.com/spotlight21c/aesencryptor"
 )
 
 var (
@@ -129,7 +129,7 @@ func New(agentKey string, encKey string, isProduction bool) *Client {
 
 // generateSignature it use AES/ECB/PKCS5Padding algorithm
 func (c *Client) generateSignature(requestID string) string {
-	if encValue, err := encrypt.AESEncrypt(c.agentKey+requestID, []byte(c.encKey)); err == nil {
+	if encValue, err := aesencryptor.Encrypt(c.agentKey+requestID, c.encKey); err == nil {
 		return base64.StdEncoding.EncodeToString(encValue)
 	}
 

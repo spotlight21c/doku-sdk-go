@@ -257,7 +257,7 @@ func (c *Client) CheckStatus(transIDMerchant string, sessionID string) (*CheckSt
 		return nil, err
 	}
 
-	// fmt.Println(string(body))
+	fmt.Println(string(body))
 
 	if response.StatusCode != http.StatusOK {
 		errorResponse := &CheckStatusResponse{}
