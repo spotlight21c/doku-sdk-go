@@ -338,5 +338,9 @@ func (c *Client) Remit(requestID, token string, amount float64, account *Account
 		return nil, err
 	}
 
+	if remitResponse.Status != 0 {
+		return nil, errors.New(remitResponse.Message)
+	}
+
 	return remitResponse, nil
 }
