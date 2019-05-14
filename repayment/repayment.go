@@ -37,8 +37,8 @@ type InquiryResponse struct {
 	PaymentCode      string   `xml:"PAYMENTCODE"`
 	Amount           string   `xml:"AMOUNT"`
 	PurchaseAmount   string   `xml:"PURCHASEAMOUNT"`
-	MinAmount        string   `xml:"MINAMOUNT"`
-	MaxAmount        string   `xml:"MAXAMOUNT"`
+	MinAmount        string   `xml:"MINAMOUNT,omitempty"`
+	MaxAmount        string   `xml:"MAXAMOUNT,omitempty"`
 	TransIDMerchant  string   `xml:"TRANSIDMERCHANT"`
 	Words            string   `xml:"WORDS"`
 	RequestDatetime  string   `xml:"REQUESTDATETIME"`
